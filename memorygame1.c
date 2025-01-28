@@ -10,7 +10,7 @@ void GenerateRandomArray(char array[], int size, int lower, int upper){
 }
 int main()
 {
-    int size = 10, lower = 1, upper = 256;
+    int size = 10, lower = 1, upper = 126;
     char array[size];
     char answer[size];
     int timer = 30;
