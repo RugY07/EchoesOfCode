@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string.h>
 #include<stdlib.h>
 #include<time.h>
 #include<unistd.h>
@@ -10,7 +11,7 @@ void GenerateRandomArray(char array[], int size, int lower, int upper){
 }
 int main()
 {
-    int size = 10, lower = 1, upper = 126;
+    int size = 10, lower = 1, upper = 100;
     char array[size];
     char answer[size];
     int timer = 30;
@@ -24,7 +25,7 @@ int main()
 
         printf("----------------MEMORY GAME----------------\n");
         int level = 1;
-        printf("%d\n", &level);
+        printf("%d\n", level);
         printf("\nMemorize this string: %s\n", array);
 
         sleep(timer);
@@ -34,7 +35,7 @@ int main()
         printf("Write your answer: \n");
         scanf("%s", answer);
 
-        if(answer == array){
+        if(strcmp(answer, array) == 0){
             printf("CONGRATULATIONS! You win.\n");
             flag = 1;
         }
@@ -49,9 +50,9 @@ int main()
         }
         printf("Do you want to play again? (y/n)");
         
-        while(play != 'y' | play != 'n'){
-            scanf("%c\n", &play);
-            if(play != 'y' | play != 'n'){
+        while(play != 'y' ||  play != 'n'){
+            scanf("%c", &play);
+            if(play != 'y' ||  play != 'n'){
                 printf("Please enter y/n for yes or no respectively\n");
             }
         }
